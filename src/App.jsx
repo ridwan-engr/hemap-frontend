@@ -1,16 +1,16 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
-import Sites from "./pages/Sites";
-import Solar from "./pages/Solar";
-import Battery from "./pages/Battery";
-import Generator from "./pages/Generator";
-import Grid from "./pages/Grid";
-import Energy from "./pages/Energy";
-import Forecast from "./pages/Forecast";
-import Faults from "./pages/Faults";
-import Reports from "./pages/Reports";
+import Login from "./pages/Login.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+import Sites from "./pages/Sites.jsx";
+import Solar from "./pages/Solar.jsx";
+import Battery from "./pages/Battery.jsx";
+import Generator from "./pages/Generator.jsx";
+import Grid from "./pages/Grid.jsx";
+import Energy from "./pages/Energy.jsx";
+import Forecast from "./pages/Forecast.jsx";
+import Faults from "./pages/Faults.jsx";
+import Reports from "./pages/Reports.jsx";
 
 function App() {
   return (
