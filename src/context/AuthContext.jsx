@@ -14,10 +14,7 @@ export function AuthProvider({
   const [user, setUser] =
     useState(null);
 
-  const login = (
-    userData,
-    token
-  ) => {
+  const login = (userData, token) => {
 
     localStorage.setItem(
       "token",
@@ -25,6 +22,7 @@ export function AuthProvider({
     );
 
     setUser(userData);
+
   };
 
   const logout = () => {
@@ -34,9 +32,11 @@ export function AuthProvider({
     );
 
     setUser(null);
+
   };
 
   return (
+
     <AuthContext.Provider
       value={{
         user,
@@ -44,13 +44,28 @@ export function AuthProvider({
         logout
       }}
     >
+
       {children}
+
     </AuthContext.Provider>
+
   );
+
 }
 
 export function useAuth() {
-  return useContext(
-    AuthContext
-  );
+
+  const context =
+    useContext(AuthContext);
+
+  if (!context) {
+
+    throw new Error(
+      "useAuth must be used inside AuthProvider."
+    );
+
+  }
+
+  return context;
+
 }

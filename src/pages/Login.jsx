@@ -1,34 +1,21 @@
-import {
-  useState
-} from "react";
-
+import { useState } from "react";
 import api from "../api/axios";
-
-import {
-  useAuth
-} from "../context/AuthContext";
+import { useAuth } from "../context/AuthContext";
 
 export default function Login() {
 
-  const [email,
-    setEmail] =
-      useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const [password,
-    setPassword] =
-      useState("");
+  // FIXED
+  const { login } = useAuth();
 
-  const { login } =
-    useAuth();
-
-  async function handleSubmit(
-    e
-  ) {
-
+  async function handleSubmit(e) {
     e.preventDefault();
 
-    const response =
-      await api.post(
+    try {
+
+      const response = await api.post(
         "/auth/login",
         {
           email,
@@ -36,25 +23,28 @@ export default function Login() {
         }
       );
 
-    login(
-      response.data.user,
-      response.data.token
-    );
+      login(
+        response.data.user,
+        response.data.token
+      );
+
+    } catch (err) {
+      console.error(err);
+      alert(
+        err.response?.data?.error ||
+        "Login failed"
+      );
+    }
   }
 
   return (
-    <form
-      onSubmit={
-        handleSubmit
-      }
-    >
+    <form onSubmit={handleSubmit}>
+
       <input
         placeholder="Email"
         value={email}
-        onChange={(e)=>
-          setEmail(
-            e.target.value
-          )
+        onChange={(e) =>
+          setEmail(e.target.value)
         }
       />
 
@@ -62,16 +52,15 @@ export default function Login() {
         type="password"
         placeholder="Password"
         value={password}
-        onChange={(e)=>
-          setPassword(
-            e.target.value
-          )
+        onChange={(e) =>
+          setPassword(e.target.value)
         }
       />
 
-      <button>
+      <button type="submit">
         Login
       </button>
+
     </form>
   );
 }
