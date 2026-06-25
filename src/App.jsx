@@ -32,4 +32,12 @@ function App() {
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <h1>
+      HEMAP Frontend Connected Successfully
+    </h1>
+  );
+}
+
+//export default App;
