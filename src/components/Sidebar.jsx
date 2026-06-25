@@ -1,6 +1,4 @@
-import {
-  Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Sidebar() {
 
@@ -8,13 +6,15 @@ export default function Sidebar() {
     <div
       style={{
         width: "250px",
-        background: "#1a202c",
-        color: "#fff",
         minHeight: "100vh",
+        background: "#0f172a",
+        color: "#fff",
         padding: "20px"
       }}
     >
       <h2>HEMAP</h2>
+
+      <hr />
 
       <ul
         style={{
