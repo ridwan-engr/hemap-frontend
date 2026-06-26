@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import Login from "./pages/Login.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Sites from "./pages/Sites.jsx";
@@ -26,6 +26,11 @@ function App() {
       <Route path="/forecast" element={<Forecast />} />
       <Route path="/faults" element={<Faults />} />
       <Route path="/reports" element={<Reports />} />
+      <Route path="/dashboard" element={ <ProtectedRoute>
+      <Dashboard />
+    </ProtectedRoute>
+  }
+/>
     </Routes>
   );
 }

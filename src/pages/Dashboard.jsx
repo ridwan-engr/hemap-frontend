@@ -6,51 +6,48 @@ import {
 import api from "../api/axios";
 
 import StatCard from
-"../components/StatCard";
+  "../components/StatCard";
 
 import DashboardLayout
-from "../layouts/DashboardLayout";
+  from "../layouts/DashboardLayout";
 
 export default function Dashboard() {
 
   const [stats,
     setStats] =
-      useState({});
+    useState({});
 
   useEffect(() => {
 
     async function load() {
 
-      const sites =
-        await api.get(
-          "/sites"
-        );
+      try {
 
-      const solar =
-        await api.get(
-          "/solar"
-        );
+        const [
+          sites,
+          solar,
+          batteries,
+          faults
+        ] = await Promise.all([
+          api.get("/sites"),
+          api.get("/solar"),
+          api.get("/batteries"),
+          api.get("/faults")
+        ]);
 
-      const batteries =
-        await api.get(
-          "/batteries"
-        );
+        setStats({
+          sites: sites.data.sites?.length || 0,
+          solar: solar.data.solar?.length || 0,
+          batteries: batteries.data.batteries?.length || 0,
+          faults: faults.data.faults?.length || 0
+        });
 
-      const faults =
-        await api.get(
-          "/faults"
-        );
+      } catch (error) {
 
-      setStats({
-        sites:
-          sites.data.count,
-        solar:
-          solar.data.count,
-        batteries:
-          batteries.data.count,
-        faults:
-          faults.data.count
-      });
+        console.error(error);
+
+      }
+
     }
 
     load();

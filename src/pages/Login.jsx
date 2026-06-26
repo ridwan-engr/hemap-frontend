@@ -1,6 +1,7 @@
 import { useState } from "react";
 import api from "../api/axios";
 import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
 
@@ -9,7 +10,7 @@ export default function Login() {
 
   // FIXED
   const { login } = useAuth();
-
+  const navigate = useNavigate();
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -31,6 +32,7 @@ export default function Login() {
         response.data.user,
         response.data.token
       );
+      navigate("/dashboard");
 
     } catch (error) {
       console.log("Message:", error.message);
