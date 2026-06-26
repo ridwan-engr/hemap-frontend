@@ -9,7 +9,7 @@ const AuthContext =
 
 export function AuthProvider({
   children
-}) {
+}) { console.log("AuthProvider Rendered");
 
   const [user, setUser] =
     useState(null);
