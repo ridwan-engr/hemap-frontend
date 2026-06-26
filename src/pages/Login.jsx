@@ -15,6 +15,8 @@ export default function Login() {
 
     try {
 
+      console.log("Sending login request...");
+
       const response = await api.post(
         "/auth/login",
         {
@@ -23,17 +25,20 @@ export default function Login() {
         }
       );
 
+      console.log("Response:", response);
+
       login(
         response.data.user,
         response.data.token
       );
 
-    } catch (err) {
-      console.error(err);
-      alert(
-        err.response?.data?.error ||
-        "Login failed"
-      );
+    } catch (error) {
+      console.log("Message:", error.message);
+      console.log("Code:", error.code);
+      console.log("Response:", error.response);
+      console.log("Request:", error.request);
+      console.log("Config:", error.config);
+
     }
   }
 
