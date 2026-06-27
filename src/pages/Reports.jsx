@@ -33,6 +33,13 @@ export default function Reports() {
             <th>Title</th>
             <th>Site</th>
             <th>Status</th>
+            <th>ens</th>
+            <th>resilienceIndex</th>
+            <th>saifi</th>
+            <th>saidi</th>
+            <th>lolp</th>
+            <th>fuelConsumptionLitres</th>
+            <th>criticalLoadServed</th>
           </tr>
 
         </thead>
@@ -46,6 +53,38 @@ export default function Reports() {
 
               <td>
                 {report.title}
+              </td>
+
+              <td>
+                {report.siteId?.siteName}
+              </td>
+
+              <td>
+                {report.ens}
+              </td>
+
+              <td>
+                {report.resilienceIndex}
+              </td>
+
+              <td>
+                {report.saifi}
+              </td>
+
+              <td>
+                {report.saidi}
+              </td>
+
+              <td>
+                {report.lolp}
+              </td>
+
+              <td>
+                {report.fuelConsumptionLitres}
+              </td>
+
+              <td>
+                {report.criticalLoadServed}
               </td>
 
               <td>
