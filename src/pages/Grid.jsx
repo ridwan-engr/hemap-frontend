@@ -58,6 +58,8 @@ export default function Grid() {
           <tr>
             <th>Site</th>
             <th>Voltage</th>
+            <th>Current</th>
+            <th>Power</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -74,6 +76,14 @@ export default function Grid() {
 
               <td>
                 {grid.voltage}
+              </td>
+
+              <td>
+                {grid.current}
+              </td>
+
+              <td>
+                {grid.power}
               </td>
 
               <td>

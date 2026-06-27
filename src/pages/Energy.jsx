@@ -33,6 +33,9 @@ export default function Energy() {
           <tr>
             <th>Site</th>
             <th>Load</th>
+            <th>Grid</th>
+            <th>Generator</th>
+            <th>Wind</th>
             <th>Solar</th>
             <th>Battery</th>
           </tr>
@@ -52,6 +55,18 @@ export default function Energy() {
 
               <td>
                 {record.loadDemand}
+              </td>
+
+              <td>
+                {record.gridGeneration}
+              </td>
+
+              <td>
+                {record.generatorGeneration}
+              </td>
+
+              <td>
+                {record.windGeneration}
               </td>
 
               <td>

@@ -151,7 +151,7 @@ export default function Sites() {
                                 </div>
                                 <div className="col-md-4 mb-3">
 
-                                    <label>Capacity (kW)</label>
+                                    <label>Site Type</label>
 
                                     <input
                                         className="form-control"
@@ -202,7 +202,7 @@ export default function Sites() {
                                         <th>State</th>
                                         <th>Latitude</th>
                                         <th>Longitude</th>
-                                        <th>siteType</th>
+                                        <th>Site Type</th>
                                         <th>Created</th>
                                         
                                     </tr>

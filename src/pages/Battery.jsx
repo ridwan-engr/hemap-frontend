@@ -31,8 +31,15 @@ export default function Battery() {
         <thead>
           <tr>
             <th>Site</th>
+            <th>Battery Capacity (kWh)</th>
+            <th>Battery Model</th>
+            <th>Battery Type</th>
+            <th>Capacity (Ah)</th>
+            <th>Voltage (V)</th>
+            <th>String No</th>
+            <th>DOD (%)</th>
             <th>SOC (%)</th>
-            <th>Voltage</th>
+            
           </tr>
         </thead>
 
@@ -48,11 +55,31 @@ export default function Battery() {
               </td>
 
               <td>
-                {battery.soc}
+                {battery.BatteryCapacity}
               </td>
 
               <td>
-                {battery.voltage}
+                {battery.BatteryModel}
+              </td>
+
+              <td>
+                {battery.BatteryType}
+              </td>
+
+              <td>
+                {battery.CapacityAh}
+              </td>
+
+              <td>
+                {battery.VoltageV}
+              </td>
+
+              <td>
+                {battery.DOD}
+              </td>
+
+              <td>
+                {battery.SOC}
               </td>
 
             </tr>

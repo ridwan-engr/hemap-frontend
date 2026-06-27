@@ -73,7 +73,14 @@ export default function Dashboard() {
         />
 
         <StatCard
-          title="Solar"
+          title="Generators"
+          value={
+            stats.generator
+          }
+        />
+
+        <StatCard
+          title="Solar Power"
           value={
             stats.solar
           }

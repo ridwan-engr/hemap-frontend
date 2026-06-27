@@ -31,8 +31,12 @@ export default function Generator() {
         <thead>
           <tr>
             <th>Site</th>
-            <th>Runtime</th>
-            <th>Fuel</th>
+            <th>Gen Capacity (kW)</th>
+            <th>Gen Model</th>
+            <th>Gen Type</th>
+            <th>Run Hours</th>
+            <th>Gen Status</th>
+            <th>Gen Engine Number</th>
           </tr>
         </thead>
 
@@ -48,11 +52,27 @@ export default function Generator() {
               </td>
 
               <td>
-                {gen.runtime}
+                {gen.capacity}
               </td>
 
               <td>
-                {gen.fuelLevel}
+                {gen.model}
+              </td>
+
+              <td>
+                {gen.type}
+              </td>
+
+              <td>
+                {gen.runHours}
+              </td>
+
+              <td>
+                {gen.status}
+              </td>
+
+              <td>
+                {gen.engineNumber}
               </td>
 
             </tr>

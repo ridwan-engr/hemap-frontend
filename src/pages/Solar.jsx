@@ -32,6 +32,12 @@ export default function Solar() {
           <tr>
             <th>Site</th>
             <th>Capacity</th>
+            <th>Model</th>
+            <th>Panel Type</th>
+            <th>Panel Count</th>
+            <th>Panel Area</th>
+            <th>Panel Efficiency</th>
+            <th>Irradiance</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -47,6 +53,30 @@ export default function Solar() {
 
               <td>
                 {item.capacity}
+              </td>
+
+              <td>
+                {item.model}
+              </td>
+
+              <td>
+                {item.panelType}
+              </td>
+
+              <td>
+                {item.panelCount}
+              </td>
+
+              <td>
+                {item.panelArea}
+              </td>
+
+              <td>
+                {item.panelEfficiency}
+              </td>
+
+              <td>
+                {item.irradiance}
               </td>
 
               <td>
