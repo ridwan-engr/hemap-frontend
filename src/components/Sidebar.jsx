@@ -32,6 +32,7 @@ export default function Sidebar() {
         <li><Link to="/forecast">Forecast</Link></li>
         <li><Link to="/faults">Faults</Link></li>
         <li><Link to="/reports">Reports</Link></li>
+        <li><Link to="/analytics">Analytics</Link></li>
       </ul>
     </div>
   );
